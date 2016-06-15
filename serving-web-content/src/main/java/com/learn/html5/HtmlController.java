@@ -11,7 +11,7 @@ public class HtmlController {
 	public String greeting(
 			@RequestParam(value="firstname",required=true) String firstname,
 			@RequestParam(value="lastname",required=true) String lastname,
-			@RequestParam(value="id") String securityid,
+			@RequestParam(value="id",required=false) String securityid,
 			@RequestParam(value="position") String position){
 		String returns = "Hi, "+ firstname + " " + lastname+ ".";
 		if(position!=null){
