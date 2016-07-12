@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>Users</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="users.js"></script>
+    	<link rel="stylesheet" type="text/css" href="style.css" >
+	</head>
+
+	<body>
+		<div ng-controller="UserList">
+			<table>
+				<tr>
+					<th>id</th>
+					<th>username</th>
+					<th>sign up date</th>
+					<th>city</th>
+					<th>country</th>
+				</tr>
+				<tr ng-repeat="i in list">
+					<td>{{i.id}}</td>
+					<td>{{i.username}}</td>
+					<td>{{i.signupdate | date: 'dd-MM-yyyy HH:mm'}}</td>
+					<td>{{i.city}}</td>
+					<td>{{i.country}}</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
