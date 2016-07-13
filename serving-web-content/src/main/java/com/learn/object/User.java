@@ -2,8 +2,14 @@ package com.learn.object;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="user")
 public class User {
 
+	@Id
+	private String _id;
     private String id;
     private String username;
     private Date signupdate;
@@ -49,6 +55,14 @@ public class User {
     public void setCountry(String country) {
         this.country = country;
     }
+
+	public String get_id() {
+		return _id;
+	}
+
+	public void set_id(String _id) {
+		this._id = _id;
+	}
     
     
     
