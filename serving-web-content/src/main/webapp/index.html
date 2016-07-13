@@ -1,30 +1,40 @@
 <!doctype html>
-<html ng-app>
+<html ng-app lang="en">
 	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Users</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-    	<script src="users.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" >
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     	<link rel="stylesheet" type="text/css" href="style.css" >
 	</head>
 
-	<body>
-		<div ng-controller="UserList">
-			<table>
-				<tr>
-					<th>id</th>
-					<th>username</th>
-					<th>sign up date</th>
-					<th>city</th>
-					<th>country</th>
-				</tr>
-				<tr ng-repeat="i in list">
-					<td>{{i.id}}</td>
-					<td>{{i.username}}</td>
-					<td>{{i.signupdate | date: 'dd-MM-yyyy HH:mm'}}</td>
-					<td>{{i.city}}</td>
-					<td>{{i.country}}</td>
-				</tr>
-			</table>
+	<body class="container" >
+		<h1>User list</h1>
+		<div class="row" ng-controller="UserList">
+			<div class="col-md-12">
+				<table>
+					<tr>
+						<th>id</th>
+						<th>username</th>
+						<th>sign up date</th>
+						<th>city</th>
+						<th>country</th>
+					</tr>
+					<tr ng-repeat="i in list">
+						<td>{{i.id}}</td>
+						<td>{{i.username}}</td>
+						<td>{{i.signupdate | date: 'dd-MM-yyyy HH:mm'}}</td>
+						<td>{{i.city}}</td>
+						<td>{{i.country}}</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</body>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="users.js"></script>
 </html>
