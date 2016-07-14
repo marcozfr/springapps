@@ -1,4 +1,4 @@
-package com.learn.html5;
+package com.learn.controller;
 
 import java.util.Date;
 import java.util.List;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.learn.dao.UserCollectionDao;
 import com.learn.object.User;
 import com.learn.spring.data.UserRepository;
 
@@ -38,14 +39,14 @@ public class HtmlController {
 	
 	@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping("/user/insert")
-	public User saveUser(@RequestParam(value="username",required=true) String username,
+	public String saveUser(@RequestParam(value="username",required=true) String username,
 	        @RequestParam(value="city",required=true) String city,
 	        @RequestParam(value="country",required=true) String country){
              
 	    User user = new User(UUID.randomUUID().toString(), username, new Date(), city, country);
 	    
 	    //return UserCollectionDao.saveUser(user);
-	    return userRepository.save(user);
+	    return userRepository.save(user).get_id();
 	}
 	
 	@RequestMapping("/user/list")

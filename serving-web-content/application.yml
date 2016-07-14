@@ -1,0 +1,7 @@
+---
+applications:
+  - name: web-content
+    buildpack: java_buildpack_offline
+    path: target/serving-web-content.war
+    services:
+      - mongodb

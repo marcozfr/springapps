@@ -10,5 +10,6 @@ public interface UserRepository extends MongoRepository<User,String> {
 
 	public List<User> findByUsername(String username);
 	public List<User> findById(String id);
+	public List<User> findByCity(String city);
 	
 }
