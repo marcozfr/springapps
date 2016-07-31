@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: serving-web-content Maven Webapp
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: FLOMA4Y
+Built-By: MarcoAntonio
 Implementation-Vendor-Id: org.springframework
-Build-Jdk: 1.8.0_66
+Build-Jdk: 1.8.0_71
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
 
