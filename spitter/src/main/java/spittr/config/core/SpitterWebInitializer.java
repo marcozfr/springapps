@@ -1,8 +1,9 @@
-package spittr.config;
+package spittr.config.core;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import spittr.web.WebConfig;
+import spittr.config.RootConfig;
+import spittr.config.WebConfig;
 
 public class SpitterWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
   
