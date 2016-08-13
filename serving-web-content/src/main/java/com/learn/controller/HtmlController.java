@@ -37,7 +37,7 @@ public class HtmlController {
 	}  
 	
 	
-	@CrossOrigin(origins = "http://localhost:8080")
+	@CrossOrigin(origins = "https://web-content.cfappssandbox.ebiz.verizon.com")
 	@RequestMapping("/user/insert")
 	public String saveUser(@RequestParam(value="username",required=true) String username,
 	        @RequestParam(value="city",required=true) String city,
@@ -49,8 +49,8 @@ public class HtmlController {
 	    return userRepository.save(user).get_id();
 	}
 	
-	@RequestMapping("/user/list")
-	@CrossOrigin(origins = "http://localhost:8080")
+	@RequestMapping("/user/list") 	
+	@CrossOrigin(origins = "https://web-content.cfappssandbox.ebiz.verizon.com")
     public List<User> getUsers(){
         //return UserCollectionDao.getUsers();
 		return userRepository.findAll();

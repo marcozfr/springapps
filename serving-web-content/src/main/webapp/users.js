@@ -1,5 +1,5 @@
 function UserList($scope, $http) {
-    $http.get('http://localhost:8080/user/list').
+    $http.get('https://web-content.cfappssandbox.ebiz.verizon.com/user/list').
         success(function(data) {
             $scope.list = data;
             console.log($scope.list);
