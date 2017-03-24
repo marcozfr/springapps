@@ -1,0 +1,18 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+div > span {
+	font-size: 12px;
+}
+
+div > a {
+	text-decoration: none;
+}
+
+div > a:VISITED,a:ACTIVE,a:LINK {
+	color: black;
+}
