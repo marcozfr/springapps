@@ -24,6 +24,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
 		resolver.setViewClass(org.springframework.web.servlet.view.JstlView.class);
+		resolver.setExposeContextBeansAsAttributes(true);
 		return resolver;
 	}
 
@@ -60,6 +61,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //		return new TilesViewResolver();
 //	}
 
+	/** ask DispatcherServlet to forward
+	 requests for static resources to the servlet container’s default servlet and not to try to
+	 handle them itself.
+	 */
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();

@@ -1,5 +1,8 @@
 package spittr.config.core;
 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import spittr.config.RootConfig;
@@ -21,5 +24,11 @@ public class SpitterWebInitializer extends AbstractAnnotationConfigDispatcherSer
   protected String[] getServletMappings() {
     return new String[] { "/" };
   }
+  
+  @Override
+	public void onStartup(ServletContext servletContext) throws ServletException {
+		super.onStartup(servletContext);
+		servletContext.setInitParameter("spring.profiles.active", "dev");
+	}
 
 }

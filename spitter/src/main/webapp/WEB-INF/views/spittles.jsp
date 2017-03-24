@@ -14,6 +14,7 @@
         <input type="hidden" name="latitude">
         <input type="hidden" name="longitude">
         <textarea name="message" cols="80" rows="5"></textarea><br/>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         <input type="submit" value="Add" />
       </form>
     </div>
@@ -30,7 +31,7 @@
           </li>
         </c:forEach>
       </ul>
-      <c:if test="${fn:length(spittleList) gt 20}">
+      <c:if test="${fn:length(spittleList) gt 10}">
         <hr />
         <s:url value="/spittles?count=${nextCount}" var="more_url" />
         <a href="${more_url}">Show more</a>

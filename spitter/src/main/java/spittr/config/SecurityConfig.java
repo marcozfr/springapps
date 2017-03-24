@@ -1,7 +1,7 @@
 package spittr.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -14,10 +14,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-		.formLogin().loginPage("/login").permitAll()
-		.and().httpBasic().realmName("spitterRealm")
-		.and().rememberMe().tokenValiditySeconds(2419200).key("spitterKey")
-		.and().logout().permitAll().logoutSuccessUrl("/").logoutUrl("/logout")
+		.formLogin()
+		//.loginPage("/login")
+		.permitAll()
+		//.and().httpBasic().realmName("spitterRealm")
+		//.and().rememberMe().tokenValiditySeconds(2419200).key("spitterKey")
+		.and().logout().logoutSuccessUrl("/")
+		//.logoutUrl("/logout")
 		.and().authorizeRequests()
 		.antMatchers("/","/home","/spitter/register").permitAll()
 //		.antMatchers(HttpMethod.POST,"/spittles").
@@ -31,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.withUser("admin").password("password").roles("USER","ADMIN");
 		
 //		auth.jdbcAuthentication().dataSource(dataSource);
-		
-		
 	}
+	
+	
 }
