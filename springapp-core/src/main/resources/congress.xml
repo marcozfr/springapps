@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="myPostProcessor" class="com.learn.spring.beans.config.PostProcessor" />
+    
+    <bean id="appContextListener" class="com.learn.spring.beans.config.AppContextListener" />
+    
+	<bean id="congress" class="com.learn.spring.beans.LocalCongress">
+		<constructor-arg ref="congressChief" />
+		<constructor-arg>
+			<list>
+				<ref bean="congressMan" />
+				<ref bean="congressMan" />
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="congressMan" class="com.learn.spring.beans.LocalCongressMan" >
+		<constructor-arg value="Republican" />
+	</bean>
+	
+	<bean id="congressChief" class="com.learn.spring.beans.LocalCongressChief">
+		<property name="message">
+			<value>Hi, greetings to the parliament.</value>
+		</property>
+	</bean>
+	
+	<import resource="congress-aop.xml"/>
+	
+</beans>
